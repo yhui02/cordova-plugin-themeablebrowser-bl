@@ -1191,6 +1191,11 @@ public class ThemeableBrowser extends CordovaPlugin {
      * The webview client receives notifications about appView
      */
     public class ThemeableBrowserClient extends WebViewClient {
+
+        public void onReceivedSslError(WebView view, SslErrorHandler handler,SslError error) {
+            handler.proceed();
+        }
+        
         PageLoadListener callback;
         CordovaWebView webView;
 
